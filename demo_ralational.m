@@ -7,8 +7,7 @@ load kinship_idxi.mat
 xi_tensor=double(xi_tensor);
 xi_tensor(isnan(xi_tensor))=0;
 para.R=max(id{3});% # of ralations
-para.N=max(max(id{1}),max(id{2}));% # of entities
-para.K=10;%rank
+para.N=max(max(id{1}),max(id{2}));% # of entities;
 para.TrainFrac=0.9;
 para.batchfrac=0.05;
 para.itermax=300;
@@ -21,8 +20,10 @@ load NELL50K.mat
 para.R=max(max(idtest{3}),max(idtrain{3}));% # of ralations
 para.N=max(max(max(idtrain{1}),max(idtrain{2})),max(max(idtest{1}),max(idtest{2})));% # of entities
 para.K=10;%rank
+para.M=10;
 para.TrainFrac=0.9;
 para.batchfrac=1;
 para.itermax=100;
 para.burnin=floor(para.itermax*3/4);
-Large_onlineEM1
+Large_onlineEM1%model 1
+Large_onlineEM2%model 2
